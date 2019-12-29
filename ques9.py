@@ -1,21 +1,21 @@
+""" print file in a directory """
+# pylint: disable=bad-indentation,anomalous-backslash-in-string, redefined-builtin
 import os
-import sys
-dir="C:\GitAssignment"
-print (dir)
-a='|--'
-b='|   '
-i=0
-def dirtree(dir,i):
-   filenames=os.listdir(dir)
+DIRECTORY = "C:\GitAssignment"
+print(dir)
+INDEX = 0
+def dirtree(dir, index):
+   """ reading the file which are present in the given directory """
+   filenames = os.listdir(dir)
    for filename in filenames:
       if not os.path.isdir(os.path.abspath(dir+'/'+filename)):
-         if filename==filenames[-1]:	
-            print (b*i+'\--',filename)
+         if filename == filenames[-1]:
+            print('|   '*index+'\--', filename)
          else:
-            print (b*i+'|--',filename)
+            print('|   '*index+'|--', filename)
       else:
-         print (b*i+'|--',filename)
-         dir=dir+'/'+filename
-         dirtree(dir,i+1)
+         print('|   '*index+'|--', filename)
+         dir = dir + '/' + filename
+         dirtree(dir, index+1)
 
-dirtree(dir,i)
+dirtree(DIRECTORY, INDEX)
