@@ -1,10 +1,11 @@
-def extractName(name ):
-    info = name
-    info = info.split('@')
-    companyName =  info[1]
-    companyName= companyName.split('.')
-    return (companyName[0])
+""" extracting company name """
+def extract_name(name):
+    """ will convert name into list """
+    information = name
+    information = information.split('@')
+    company_name = information[1]
+    company_name = company_name.split('.')
+    print(company_name[0])
 
-Email = input ("Enter EmailAddress      ")
-
-print (extractName(Email))
+EMAIL = input("Enter EmailAddress")
+extract_name(EMAIL)
