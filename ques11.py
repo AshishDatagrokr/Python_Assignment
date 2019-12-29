@@ -1,13 +1,15 @@
+
+"""importing line to fetch data from HTML link """
+# pylint: disable=import-error
 import requests
 from bs4 import BeautifulSoup
 
-#Web Scraping (100 movies)
-result=requests.get("https://www.imdb.com/list/ls006266261/")
-soup=BeautifulSoup(result.text,features="html.parser")
+RESULT = requests.get('https://www.imdb.com/list/ls006266261/')
+SOUP = BeautifulSoup(RESULT.text, features='html.parser')
 
-l=soup.find_all('h3',{'class':'lister-item-header'})
-m_name=[]
-for x in l:
-    for y in x.find_all('a'):
-        m_name.append(y.text)
-print(m_name)
+LIST_WEB_ITEMS = SOUP.find_all('h3', {'class': 'lister-item-header'})
+RESULT_NAME = []
+for item in LIST_WEB_ITEMS:
+    for name in item.find_all('a'):
+        RESULT_NAME.append(name.text)
+print(RESULT_NAME)
