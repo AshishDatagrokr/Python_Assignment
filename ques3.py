@@ -1,42 +1,30 @@
+""" user input """
+
+STRING = str(input("Enter comma separated integers: "))
+print("Input string: ", str)
 
 
-
-str = str (input ("Enter comma separated integers: "))
-print ("Input string: ", str)
-
-# conver to the list
-Stringlist = str.split (",")
-print ("Stringlist: ", Stringlist )
+STRING_LIST = STRING.split(",")
+print("Stringlist: ", STRING_LIST)
 
 # convert each element as integers
-Integer_list = []
+INTEGER_LIST = []
 
-for number in Stringlist:
-	Integer_list.append(int(number))
+for number in STRING_LIST:
+    INTEGER_LIST.append(int(number))
+print("list (Integer_List) : ", INTEGER_LIST)
 
-# print list as integers
-print ("list (Integer_List) : ", Integer_list)
-
-Distinct_Element = []
+DISTINCT_ELEMENT = []
 
 
-Distinct_Element = set(Integer_list)
+DISTINCT_ELEMENT = set(INTEGER_LIST)
 
-print(Distinct_Element)
+print(DISTINCT_ELEMENT)
+print(type(DISTINCT_ELEMENT))
 
-print(type(Distinct_Element))
-
-
-result = []
-
-
-for element in Integer_list :
-    if element in Distinct_Element:
-        result.append(element)
-        Distinct_Element.remove(element)
-
-print(result)
-    
-
-
-
+RESULT = []
+for element in INTEGER_LIST:
+    if element in DISTINCT_ELEMENT:
+        RESULT.append(element)
+        DISTINCT_ELEMENT.remove(element)
+print(RESULT)
