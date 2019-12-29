@@ -1,33 +1,47 @@
-from abc import ABC, abstractmethod 
+""" abc is a by default abrstract class present """
+
+from abc import ABC, abstractmethod
+# pylint: disable=missing-final-newline,unnecessary-pass,abstract-class-instantiated
 class Person(ABC):
+
+    """ inherit ABC class """
+
     @abstractmethod
-    def getGender(self):
+    def get_gender(self):
+        """ skipping the function """
         pass
 
+
 class Female(Person):
-    def getGender(self):
+
+    """ this class return gender of a person """
+
+    def get_gender(self):
+        """ self is by default argument """
+
         print("Person is Female")
 
 
 class Male(Person):
-    def getGender(self):
+
+    """ this class return gender of a person """
+
+    def get_gender(self):
+        """ self is by default argument """
+
         print("Person is Male")
 
 
 try:
-    parent = Person()
+    PARENT = Person()
 except TypeError:
     print(TypeError)
-finally :
+finally:
 
     print("Female class method")
-    female = Female()
-    female.getGender()
+    FEMALE = Female()
+    FEMALE.get_gender()
 
-    print("Male class method")ss
-    male = Male()
-    male.getGender()
-
-
-
-
+    print("Male class method")
+    MALE = Male()
+    MALE.get_gender()
